@@ -295,6 +295,45 @@ var nightwind = {
 
 </details>
 
+<details>
+  <summary>Angular (using the <a href="https://github.com/devLukaszMichalak/ngx-nightwind">ngx-nightwind</a> library)</summary>
+
+NgxNightwind is a library that provides a service with helper functions to easily manage nightwind dark mode in Angular applications.
+
+First, provide the NgxNightwindService using the `provideNgxNightwind()` method in your application configuration:
+```ts
+import { provideNgxNightwind } from 'ngx-nightwind';
+
+export const appConfig: ApplicationConfig = {
+  providers: [
+    ...
+    provideNgxNightwind(),
+    ...
+  ]
+};
+```
+
+After providing the service, you can use it to manipulate the mode in your components:
+
+```ts
+import { NgxNightwind } from 'ngx-nightwind';
+
+
+constructor(private ngxNightwind: NgxNightwind) {
+  
+  // Switches to light mode
+  this.ngxNightwind.enableLight();
+  
+  // Switches to dark mode
+  this.ngxNightwind.enableDark();
+
+  // Toggles the mode
+  this.ngxNightwind.toggle();
+  
+}
+```
+</details>
+
 
 ## Getting started
 
